@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Социокультурная разведка · Альшеевский район. Белебеевский уезд</title>
+<meta name="description" content="Истории Альшеевского, Давлекановского и Белебеевского районов: горы старше динозавров, медовый месяц Чехова, дворец Деева, немецкое Давлеканово. Программа разведки 17 и 18 октября 2026 года, карта и перспективы района.">
+<meta property="og:title" content="Социокультурная разведка">
+<meta property="og:description" content="Альшеевский район. Белебеевский уезд. Истории, карта, программа и перспективы.">
+<meta property="og:image" content="assets/video/hero-poster.jpg">
+<meta name="theme-color" content="#F6F2E8">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Mono&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<svg class="defs" aria-hidden="true"><defs>
+  <clipPath id="mk-clip"><path d="M0 30V24.5C3.6 23.8 6.6 17.2 9.2 9.6C10.4 6 11.3 3.6 12 3.6C12.7 3.6 13.6 6 14.8 9.6C16.3 14 18.1 17 20.4 16.4C22.2 13.4 23.6 11.4 26 11.2L33.4 11C35.8 11.2 37.4 14.4 40 19.6V30Z"/></clipPath>
+  <symbol id="mark" viewBox="0 0 40 30"><g clip-path="url(#mk-clip)"><rect width="40" height="12.6" fill="#6E7F2F"/><rect y="13.5" width="40" height="3.8" fill="#D08A2E"/><rect y="18.2" width="40" height="3.8" fill="#9B3B2A"/><rect y="22.9" width="40" height="3.2" fill="#4D5F70"/><rect y="27" width="40" height="3" fill="#1F2B22"/></g></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.3" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5C6.5 4.5 9.5 4.5 12 6c2.5-1.5 5.5-1.5 8-.5v13c-2.5-1-5.5-1-8 .5-2.5-1.5-5.5-1.5-8-.5z M12 6v13.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 4l8.5 4.5L12 13 3.5 8.5z M3.5 12.5L12 17l8.5-4.5 M3.5 16.5L12 21l8.5-4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4.5 6.5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H11l-4.5 3.5v-3.5h0a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M14.5 5.5L8 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></symbol>
+</defs></svg>
+
+<div class="kern" id="kern" aria-hidden="true"></div>
+
+<header class="hdr" id="hdr">
+  <a class="brand" href="#top" aria-label="В начало"><svg viewBox="0 0 40 30"><use href="#mark"/></svg><span>Социокультурная разведка</span></a>
+  <nav class="nav" aria-label="Разделы">
+    <a href="#programma">Программа</a><a href="#istorii">Истории</a><a href="#karta">Карта</a><a href="#plasty">Пласты</a><a href="#perspektivy">Перспективы</a><a href="#sobytiya">События</a><a href="#kontakty">Контакты</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><i></i><i></i></button>
+</header>
+
+<!-- меню на телефоне -->
+<div class="msheet" id="msheet" aria-hidden="true">
+  <nav aria-label="Разделы">
+    <a href="#programma"><em>01</em>Программа</a><a href="#istorii"><em>02</em>Истории мест</a><a href="#karta"><em>03</em>Карта</a><a href="#plasty"><em>04</em>Пласты</a><a href="#perspektivy"><em>05</em>Перспективы</a><a href="#sobytiya"><em>06</em>Мероприятия и кино</a><a href="#servis"><em>07</em>Сервис</a><a href="#kontakty"><em>08</em>Контакты</a>
+  </nav>
+  <p class="ms-foot">Альшеевский район. Белебеевский уезд</p>
+</div>
+
+<main id="top">
+  <!-- ГЛАВНЫЙ ЭКРАН: ролики с дрона над Сусактау сменяются наплывом -->
+  <section class="hero" id="hero">
+    <div class="hero-media" id="heroMedia">
+      <img class="hero-poster" src="assets/video/hero-poster.jpg" alt="">
+      <video class="hv on" id="hv1" muted playsinline autoplay preload="auto" poster="assets/video/hero-poster.jpg" aria-hidden="true">
+        <source src="assets/video/hero-720.mp4" type="video/mp4" media="(max-width: 767px)">
+        <source src="assets/video/hero-1080.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-in">
+      <div class="kick"><svg viewBox="0 0 40 30" aria-hidden="true"><use href="#mark"/></svg><span>17 и 18 октября 2026</span></div>
+      <h1>Социокультурная разведка</h1>
+      <p class="hero-sub">Альшеевского района и Белебеевского уезда</p>
+      <div class="hero-btns"><a class="btn btn-light" href="#programma">Программа</a><a class="btn btn-ghost" href="#istorii">Истории мест</a></div>
+    </div>
+    <button class="hero-play" id="heroPlay" hidden aria-label="Запустить видео"><svg><use href="#i-play"/></svg></button>
+    <span class="hero-cap">Гора Сусактау с дрона · видео туристического портала Альшеевского района</span>
+    <a class="hero-down" href="#programma" aria-label="Листать вниз"><i></i></a>
+  </section>
+
+  <!-- ПРОГРАММА -->
+  <section class="sec" id="programma">
+    <div class="wrap">
+      <div class="sec-h reveal"><span class="lab">Программа</span><h2>Два дня разведки</h2><p class="sec-lead">Расписание по дням, время местное.</p></div>
+      <div class="tabs reveal" role="tablist" id="dayTabs"></div>
+      <div class="days" id="days"></div>
+      <div class="prog-foot reveal">
+        <div class="tip"><svg viewBox="0 0 40 30" aria-hidden="true"><use href="#mark"/></svg><div><b>Совет на подъём в горы</b><p>Возьмите кроссовки и свободную одежду.</p></div></div>
+        <a class="btn btn-ink" href="files/programma-razvedki-17-18-oktyabrya.pdf" download>Скачать программу, PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ИСТОРИИ МЕСТ -->
+  <section class="sec" id="istorii">
+    <div class="wrap">
+      <div class="sec-h reveal"><span class="lab">Истории мест</span><h2>Здесь у каждого места своя история</h2><p class="sec-lead">Гора старше динозавров, медовый месяц Чехова, дворец, который ждёт своего часа, и мельница «Якорь». Откройте карточку и прочитайте историю целиком.</p></div>
+      <div class="seg reveal" id="distSeg"></div>
+      <div class="cards" id="cards"></div>
+      <button class="btn btn-line more" id="moreCards" hidden>Показать все истории</button>
+    </div>
+  </section>
+
+  <!-- КАРТА -->
+  <section class="sec sec-map" id="karta">
+    <div class="wrap">
+      <div class="sec-h reveal"><span class="lab">Карта</span><h2>Все места трёх районов</h2><p class="sec-lead">Цвет точки показывает пласт. Выберите пласт, чтобы оставить на карте только его места.</p></div>
+      <div class="filters reveal" id="mapFilters"></div>
+      <div class="mapgrid reveal">
+        <aside class="maplist" id="mapList" aria-label="Список мест"></aside>
+        <div class="mapbox" id="mapbox">
+          <div id="map" aria-label="Карта мест"></div>
+          <label class="rings"><input type="checkbox" id="rings"> 20, 40 и 60 км от Раевского</label>
+          <button class="maplock" id="maplock">Нажмите, чтобы двигать карту</button>
+          <button class="mapdone" id="mapdone" hidden>Готово</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПЛАСТЫ -->
+  <section class="sec sec-sand" id="plasty">
+    <div class="wrap">
+      <div class="sec-h reveal"><span class="lab">Пласты</span><h2>Десять слоёв истории</h2><p class="sec-lead">Как на геологическом разрезе: у каждого слоя свой цвет и своя штриховка. В одном месте может выйти на поверхность сразу несколько пластов.</p></div>
+      <div class="layers" id="layers"></div>
+    </div>
+  </section>
+
+  <!-- ВИДЕО-ПОЛОСА -->
+  <section class="vband" id="vband" aria-label="Видео: долина Дёмы с дрона">
+    <video id="vbVideo" muted playsinline loop preload="none" poster="assets/video/hero2-poster.jpg" aria-hidden="true"></video>
+    <div class="vb-in"><p>Горам над Дёмой около 270 миллионов лет. Истории людей на их склонах моложе, но увлекают не меньше.</p></div>
+  </section>
+
+  <!-- ПЕРСПЕКТИВЫ -->
+  <section class="sec" id="perspektivy">
+    <div class="wrap">
+      <div class="sec-h reveal"><span class="lab">Перспективы</span><h2>Что будет дальше</h2><p class="sec-lead">Район уже меняется. Вот что решено, что будут строить и о чём мечтают организаторы.</p></div>
+      <div class="future hscroll" id="future"></div>
+    </div>
+  </section>
+
+  <!-- МЕРОПРИЯТИЯ И КИНО -->
+  <section class="sec sec-sand" id="sobytiya">
+    <div class="wrap">
+      <div class="sec-h reveal"><span class="lab">Мероприятия и кино</span><h2>Какие мероприятия проводят</h2><p class="sec-lead">Праздники, фестивали и встречи трёх районов по месяцам.</p></div>
+      <div class="cal hscroll" id="cal"></div>
+      <p class="note reveal" id="calNote"></p>
+      <div class="sec-h sub reveal"><h3>Фильмы о людях этой земли</h3><p class="sec-lead">LifeStyle Cinema и АНО РСЗИ «Триумф».</p></div>
+      <div class="films hscroll" id="films"></div>
+    </div>
+  </section>
+
+  <!-- МОТИВАЦИЯ И СЕРВИС -->
+  <section class="sec" id="servis">
+    <div class="wrap">
+      <div class="sec-h reveal"><span class="lab">Территория</span><h2>Альшеевский район. Белебеевский уезд</h2><p class="sec-lead">Ради чего едут и на чём держится поездка. Всё в радиусе часа езды от Раевского: до Давлеканова 17 км по прямой, до Белебея 55 км, до Уфы 120 км по железной дороге.</p></div>
+      <div class="two">
+        <div class="panel reveal"><span class="lab">Ради чего едут</span><ul id="motiv"></ul></div>
+        <div class="panel reveal"><span class="lab">На чём держится поездка</span><ul id="serv"></ul></div>
+      </div>
+      <p class="claim reveal">Альшеевский район берёт на себя сервис для всей территории бывшего уезда: ночлег, еду, дорогу и навигацию. Истории и сервис вместе складываются в один бренд.</p>
+    </div>
+  </section>
+
+  <!-- КОНТАКТЫ -->
+  <section class="sec sec-sand" id="kontakty">
+    <div class="wrap">
+      <div class="sec-h reveal"><span class="lab">Контакты</span><h2>Давайте дружить</h2></div>
+      <div class="contacts" id="contacts"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top"><a class="brand" href="#top"><svg viewBox="0 0 40 30"><use href="#mark"/></svg><span>Социокультурная разведка</span></a><span class="mono">Альшеевский район. Белебеевский уезд · 2026</span></div>
+    <details class="srcs"><summary>Источники, фото и видео</summary><div id="sources"></div></details>
+    <p class="mono small">Фото подписаны в карточках: автор и источник. Карта © участники OpenStreetMap.</p>
+  </div>
+</footer>
+
+<!-- нижняя панель на телефоне -->
+<nav class="tabbar" id="tabbar" aria-label="Быстрые разделы">
+  <a href="#programma"><svg><use href="#i-cal"/></svg><span>Программа</span></a>
+  <a href="#istorii"><svg><use href="#i-book"/></svg><span>Истории</span></a>
+  <a href="#karta"><svg><use href="#i-map"/></svg><span>Карта</span></a>
+  <a href="#plasty"><svg><use href="#i-layers"/></svg><span>Пласты</span></a>
+  <a href="#kontakty"><svg><use href="#i-chat"/></svg><span>Контакты</span></a>
+</nav>
+
+<!-- панель места или пласта -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" aria-hidden="true">
+  <div class="dbar" id="dbar"><button class="dback" id="drawerBack"><svg><use href="#i-back"/></svg><span>Назад</span></button><span class="dbar-t" id="dbarTitle"></span><button class="close" id="drawerClose" aria-label="Закрыть"><i></i><i></i></button></div>
+  <div class="drawer-in" id="drawerIn"></div>
+</aside>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="assets/js/districts.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
